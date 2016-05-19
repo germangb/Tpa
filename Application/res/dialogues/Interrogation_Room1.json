@@ -21,8 +21,8 @@
       ],
       "answers": [
         {"text": "I think... it rhymed with something like... Malibu.", "data": null, "jump": 1},
-        {"text": "Yeah, his name is Alex. I hope he’s fine… I don’t want to talk about this now.", "data": null, "jump": 2},
-        {"text": "What?!? Well... maybe... I mean, I didn’t know where she has been most of the time so… why not... Maybe she met someone in the pub...", "data": "lover", "jump": 1}
+        {"text": "Yeah, his name is Alex.; I hope he’s fine… ;I don’t want to talk about this now.", "data": null, "jump": 2},
+        {"text": "What?!? Well... maybe...; I mean, I didn’t know where she has been most of the time so…; why not... Maybe she met someone in the pub...", "data": "lover", "jump": 1}
       ]
     },
 
