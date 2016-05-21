@@ -23,11 +23,15 @@ public class Launch {
         // create a window
         GLFW.glfwDefaultWindowHints();
         GLFW.glfwWindowHint(GLFW.GLFW_RESIZABLE, GLFW.GLFW_FALSE);
-        long window = GLFW.glfwCreateWindow(800, 600, "Hello world", GLFW.glfwGetPrimaryMonitor(), MemoryUtil.NULL);
-        //long window = GLFW.glfwCreateWindow(800, 600, "Hello world", MemoryUtil.NULL, MemoryUtil.NULL);
+
+        long monitor = MemoryUtil.NULL;
+        if (argv.length >= 1 && argv[0].equals("--fullscreen"))
+            monitor = GLFW.glfwGetPrimaryMonitor();
+
+        //long window = GLFW.glfwCreateWindow(800, 600, "Hello world", GLFW.glfwGetPrimaryMonitor(), MemoryUtil.NULL);
+        long window = GLFW.glfwCreateWindow(800, 600, "Video game project :: TPA@ETSETB-UPC", monitor, MemoryUtil.NULL);
         GLFW.glfwMakeContextCurrent(window);
         GLFW.glfwSwapInterval(1);
-
 
         // instantiate implementation for input, graphics, audio, etc...
         LwjglRenderer renderer = new LwjglRenderer();

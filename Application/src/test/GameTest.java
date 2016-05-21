@@ -2,6 +2,7 @@ package test;
 
 import game.Game;
 import game.GameActivity;
+import game.Values;
 import rendering.materials.GrainMaterial;
 import resources.ResourceManager;
 import tpa.application.Application;
@@ -80,7 +81,7 @@ public class GameTest implements Application {
                 Game.getInstance().pushActivity(GameActivity.SplashFill);
                 Game.getInstance().pushActivity(GameActivity.Splash1);
                 Game.getInstance().pushActivity(GameActivity.SplashFill);
-                //Game.getInstance().pushActivity(GameActivity.Acid);
+                //Game.getInstance().pushActivity(GameActivity.Lover);
                 //Game.getInstance().pushActivity(GameActivity.Intro);
                 //Game.getInstance().pushActivity(GameActivity.Club);
                 //Game.getInstance().pushActivity(GameActivity.Interrogation);

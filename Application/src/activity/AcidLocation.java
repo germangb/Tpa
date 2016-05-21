@@ -47,7 +47,6 @@ public class AcidLocation extends LocationActivity {
 
     @Override
     public void onRoomPostLoad(Context context) {
-        setNoise(0.5f);
         Sound steps = Game.getInstance().getResources().get("res/sfx/steps.wav", Sound.class);
         violin = Game.getInstance().getResources().get("res/sfx/violin0.wav", Sound.class);
         Mesh personMesh = Game.getInstance().getResources().get("res/models/capsule.json", Mesh.class);
@@ -94,7 +93,8 @@ public class AcidLocation extends LocationActivity {
     TaskManager task = new TaskManager();
 
     @Override
-    public void onEntered(Context context) {
+    public void onEntered(final Context context) {
+        setNoise(0.5f);
         //Game.getInstance().pushActivity(GameActivity.Acid1);
         task.clear();
         task.add(new DelayTask(13, context.time));
@@ -113,10 +113,13 @@ public class AcidLocation extends LocationActivity {
                 return t < 0;
             }
         });
-        task.add(new DoSomethingTask(() -> {
-            Game.getInstance().popActivity();
-            Game.getInstance().pushActivity(GameActivity.Lover);
-            Game.getInstance().pushActivity(GameActivity.Acid2);
+        task.add(new DoSomethingTask(new Runnable() {
+            @Override
+            public void run() {
+                Game.getInstance().popActivity();
+                Game.getInstance().pushActivity(GameActivity.Lover);
+                Game.getInstance().pushActivity(GameActivity.Acid2);
+            }
         }));
 
         addGeometry(cubo);
